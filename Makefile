@@ -68,7 +68,7 @@ fclean: clean
 re: fclean all
 
 readme:
-	@curl -s -o README.md \
+	@curl -sS -o README.md \
 	https://raw.githubusercontent.com/neusamcn/minitalk/refs/heads/main/README.md
 	@echo "\nREADME.md downloaded.\n"
 
