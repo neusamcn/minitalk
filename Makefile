@@ -1,4 +1,4 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,9 +6,9 @@
 #    By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/11 14:59:39 by ncruz-ne          #+#    #+#              #
-#    Updated: 2026/01/12 10:16:02 by ncruz-ne         ###   ########.fr        #
+#    Updated: 2026/01/12 12:58:39 by ncruz-ne         ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
 SERVER = server
 CLIENT = client
@@ -67,6 +67,11 @@ fclean: clean
 
 re: fclean all
 
+readme:
+	@curl -s -o README.md \
+	https://raw.githubusercontent.com/neusamcn/minitalk/refs/heads/main/README.md
+	@echo "\nREADME.md downloaded.\n"
 
-.PHONY: all clean fclean re
+
+.PHONY: all clean fclean re readme
 
