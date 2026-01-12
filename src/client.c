@@ -27,7 +27,7 @@ static void	send_msg(unsigned char chr, __pid_t server_pid)
 		else
 			kill(server_pid, SIGUSR2);
 		bit++;
-		while (!g_ack)
+		while (g_ack == 0)
 			usleep(10);
 	}
 }
