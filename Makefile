@@ -6,7 +6,7 @@
 #    By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/11 14:59:39 by ncruz-ne          #+#    #+#              #
-#    Updated: 2026/01/12 08:16:34 by ncruz-ne         ###   ########.fr        #
+#    Updated: 2026/01/12 09:02:21 by ncruz-ne         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -41,7 +41,7 @@ $(CLIENT): $(LIBFT) $(CLIENT_OBJ)
 	@echo "$@ compiled.\n"
 
 $(LIBFT):
-	@$(MAKE) -C libft
+	@$(MAKE) -C libft libft.a
 	@echo "$(LIBFT) compiled.\n"
 
 $(OBJ_DIR):
@@ -56,13 +56,13 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
 
 clean:
 	@-rm -f $(SERVER_OBJ) $(CLIENT_OBJ)
+	@-rm -rf $(OBJ_DIR)
 	@$(MAKE) -C libft clean
 	@echo "All object files and libraries removed.\n"
 
 fclean: clean
 	@-rm -f $(SERVER) $(CLIENT)
 	@$(MAKE) -C libft fclean
-	@-rm -rf $(OBJ_DIR)
 	@echo "Executables, object files and libraries removed.\n"
 
 re: fclean all

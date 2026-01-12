@@ -6,7 +6,7 @@
 /*   By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 16:24:20 by ncruz-ne          #+#    #+#             */
-/*   Updated: 2026/01/12 08:25:48 by ncruz-ne         ###   ########.fr       */
+/*   Updated: 2026/01/12 09:05:31 by ncruz-ne         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -70,6 +70,7 @@ static long	ft_atol(const char *nptr)
 	if ((nb > INT_MAX && sign == -1) || (nb > INT_MAX && sign == 1))
 	{
 		ft_putstr_fd("****ERROR****\nInvalid PID (over integer range)\n", 1);
+		ft_putstr_fd("Try sending message again.\n", 1);
 		exit(EXIT_FAILURE);
 	}
 	return (nb * sign);

@@ -6,7 +6,7 @@
 /*   By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 16:24:17 by ncruz-ne          #+#    #+#             */
-/*   Updated: 2026/01/12 08:17:46 by ncruz-ne         ###   ########.fr       */
+/*   Updated: 2026/01/12 08:54:10 by ncruz-ne         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -19,7 +19,7 @@ static void	handler(int signo, siginfo_t *info, void *context)
 
 	(void)context;
 	if (signo == SIGUSR1)
-		chr |= (1 << bit);
+		chr = chr | (1 << bit);
 	bit++;
 	if (bit == 8)
 	{
