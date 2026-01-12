@@ -70,7 +70,7 @@ static long	ft_atol(const char *nptr)
 	if ((nb > INT_MAX && sign == -1) || (nb > INT_MAX && sign == 1))
 	{
 		ft_putstr_fd("****ERROR****\nPID over integer range\n", 1);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	return (nb * sign);
 }
