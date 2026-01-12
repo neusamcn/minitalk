@@ -6,7 +6,7 @@
 /*   By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 16:24:20 by ncruz-ne          #+#    #+#             */
-/*   Updated: 2026/01/12 01:50:08 by ncruz-ne         ###   ########.fr       */
+/*   Updated: 2026/01/12 08:25:48 by ncruz-ne         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -56,20 +56,20 @@ static long	ft_atol(const char *nptr)
 	i = 0;
 	sign = 1;
 	nb = 0;
-	while (nptr[i] == 32 || (nptr[i] > 8 && nptr[i] < 14))
+	while (nptr[i] == ' ' || (nptr[i] >= '\t' && nptr[i] <= '\r'))
 		i++;
 	if (nptr[i] == '-')
 		sign = -1;
 	if (nptr[i] == '-' || nptr[i] == '+')
 		i++;
-	while (nptr[i] && nptr[i] >= '0' && nptr[i] <= '9')
+	while (ft_isdigit(nptr[i]) != 0)
 	{
 		nb = nb * 10 + (nptr[i] - '0');
 		i++;
 	}
 	if ((nb > INT_MAX && sign == -1) || (nb > INT_MAX && sign == 1))
 	{
-		ft_putstr_fd("****ERROR****\nPID over integer range\n", 1);
+		ft_putstr_fd("****ERROR****\nInvalid PID (over integer range)\n", 1);
 		exit(EXIT_FAILURE);
 	}
 	return (nb * sign);

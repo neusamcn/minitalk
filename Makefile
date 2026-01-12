@@ -6,7 +6,7 @@
 #    By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/11 14:59:39 by ncruz-ne          #+#    #+#              #
-#    Updated: 2026/01/12 01:53:01 by ncruz-ne         ###   ########.fr        #
+#    Updated: 2026/01/12 08:16:34 by ncruz-ne         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -22,11 +22,11 @@ OBJ_DIR = obj
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -Iinclude
 
-SERVER_SRC  = $(SRC_DIR)/server.c
-CLIENT_SRC  = $(SRC_DIR)/client.c
+SERVER_SRC = $(SRC_DIR)/server.c
+CLIENT_SRC = $(SRC_DIR)/client.c
 
-SERVER_OBJ  = $(OBJ_DIR)/server.o
-CLIENT_OBJ  = $(OBJ_DIR)/client.o
+SERVER_OBJ = $(OBJ_DIR)/server.o
+CLIENT_OBJ = $(OBJ_DIR)/client.o
 
 
 all: $(LIBFT) $(OBJ_DIR) $(SERVER) $(CLIENT)

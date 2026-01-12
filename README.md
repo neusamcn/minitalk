@@ -54,4 +54,3 @@ AI was used as a support for research in order to find and better understand the
 #### Bitwise operations
 
 - https://www.geeksforgeeks.org/c/bitwise-operators-in-c-cpp/
-
