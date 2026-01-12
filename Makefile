@@ -57,7 +57,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
 clean:
 	@-rm -f $(SERVER_OBJ) $(CLIENT_OBJ)
 	@$(MAKE) -C libft clean
-	@echo "All object files removed.\n"
+	@echo "All object files and libraries removed.\n"
 
 fclean: clean
 	@-rm -f $(SERVER) $(CLIENT)
@@ -68,5 +68,5 @@ fclean: clean
 re: fclean all
 
 
-.PHONY: all clean fclean re # test
+.PHONY: all clean fclean re
 
