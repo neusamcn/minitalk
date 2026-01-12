@@ -16,7 +16,4 @@
 # include "../libft/libft.h"
 # include <signal.h>
 
-// long	ft_atol(const char *nptr);
-// char	*ft_realloc(char *str, int to_add);
-
 #endif
