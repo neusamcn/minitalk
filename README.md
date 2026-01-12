@@ -20,14 +20,14 @@ We could also call this a custom inter-process communication (IPC) protocol on t
 - For a complete leak check and cleaner outputs:
 	- Server:
 
-	  valgrind --log-file=valg_server_log.log --leak-check=full --show-leak-kinds=all -s ./server
+		  valgrind --log-file=valg_server_log.log --leak-check=full --show-leak-kinds=all -s ./server
 
 	- Client (for each message sent):
 		
-	  valgrind --log-file=valg_client_log.log --leak-check=full --show-leak-kinds=all -s ./client server_PID "message"
+		  valgrind --log-file=valg_client_log.log --leak-check=full --show-leak-kinds=all -s ./client server_PID "message"
 - To check the time it takes to display 100 characters (should be under 1 second):
 
-  time ./client "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 abcdefghijklmnopqrstuvwxyz ABCDEFGHIJ"
+	  time ./client "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 abcdefghijklmnopqrstuvwxyz ABCDEFGHIJ"
 
 ## Resources
 
