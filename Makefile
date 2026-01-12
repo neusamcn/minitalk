@@ -6,7 +6,7 @@
 #    By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/11 14:59:39 by ncruz-ne          #+#    #+#              #
-#    Updated: 2026/01/12 09:02:21 by ncruz-ne         ###   ########.fr        #
+#    Updated: 2026/01/12 10:16:02 by ncruz-ne         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,7 +20,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -Iinclude
+CFLAGS = -Wall -Werror -Wextra -Iinclude -D_DEFAULT_SOURCE
 
 SERVER_SRC = $(SRC_DIR)/server.c
 CLIENT_SRC = $(SRC_DIR)/client.c

@@ -6,7 +6,7 @@
 /*   By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 16:24:20 by ncruz-ne          #+#    #+#             */
-/*   Updated: 2026/01/12 09:05:31 by ncruz-ne         ###   ########.fr       */
+/*   Updated: 2026/01/12 10:27:34 by ncruz-ne         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -31,13 +31,14 @@ static void	send_msg(unsigned char chr, __pid_t server_pid)
 			usleep(10);
 	}
 }
+
 static void	handler(int sig)
 {
 	if (sig == SIGUSR1)
 		g_ack = 1;
 }
 
-static void	init_sig(void)
+static void	init_sig_client(void)
 {
 	struct sigaction	sa;
 
@@ -69,7 +70,7 @@ static long	ft_atol(const char *nptr)
 	}
 	if ((nb > INT_MAX && sign == -1) || (nb > INT_MAX && sign == 1))
 	{
-		ft_putstr_fd("****ERROR****\nInvalid PID (over integer range)\n", 1);
+		ft_putstr_fd("****ERROR****\nInvalid PID (over integer range)\n\n", 1);
 		ft_putstr_fd("Try sending message again.\n", 1);
 		exit(EXIT_FAILURE);
 	}
@@ -90,7 +91,7 @@ int	main(int ac, char **av)
 			ft_putstr_fd("Try sending message again.\n", 1);
 			return (EXIT_FAILURE);
 		}
-		init_sig();
+		init_sig_client();
 		i = 0;
 		while (av[2][i])
 			send_msg(av[2][i++], server_pid);

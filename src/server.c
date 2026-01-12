@@ -6,7 +6,7 @@
 /*   By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 16:24:17 by ncruz-ne          #+#    #+#             */
-/*   Updated: 2026/01/12 08:54:10 by ncruz-ne         ###   ########.fr       */
+/*   Updated: 2026/01/12 10:58:58 by ncruz-ne         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -32,13 +32,26 @@ static void	handler(int signo, siginfo_t *info, void *context)
 	kill(info->si_pid, SIGUSR1);
 }
 
+static void	init_sig_server(void)
+{
+	struct sigaction	sa;
+
+	sa.sa_sigaction = handler;
+	sigemptyset(&sa.sa_mask);
+	sa.sa_flags = SA_SIGINFO;
+	sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR2, &sa, NULL);
+}
+
 int	main(void)
 {
 	struct sigaction	sa;
 
 	ft_putstr_fd("Use PID below w/ client to send message:\nServer PID: ", 1);
 	ft_putnbr_fd((int)getpid(), 1);
-	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("\n\nServer is listening...\n", 1);
+	ft_putstr_fd("Enter 'kill server_PID' from client to terminate\n", 1);
+	init_sig_server();
 	sa.sa_sigaction = handler;
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_SIGINFO;
