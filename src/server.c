@@ -12,13 +12,13 @@
 
 #include "../include/minitalk.h"
 
-static void	handler(int signo, siginfo_t *info, void *context)
+static void	handler(int sig, siginfo_t *info, void *context)
 {
 	static unsigned char	chr = 0;
 	static int				bit = 0;
 
 	(void)context;
-	if (signo == SIGUSR1)
+	if (sig == SIGUSR1)
 		chr = chr | (1 << bit);
 	bit++;
 	if (bit == 8)
