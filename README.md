@@ -16,7 +16,7 @@ We could also call this a custom inter-process communication (IPC) protocol on t
 5. Confirm messages are received from different terminals.
 6. Use `kill server_PID` at the server's terminal to end the program gracefully.
 
-Recommendations for testing:
+### Recommendations for testing:
 - For a complete leak check and cleaner outputs:
 	- Server:
 
