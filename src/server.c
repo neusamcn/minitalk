@@ -19,7 +19,7 @@ static void	handler(int signo, siginfo_t *info, void *context)
 
 	(void)context;
 	if (signo == SIGUSR1)
-		chr |= (1 << bit);
+		chr = chr | (1 << bit);
 	bit++;
 	if (bit == 8)
 	{
@@ -40,8 +40,8 @@ int	main(void)
 	ft_putnbr_fd((int)getpid(), 1);
 	ft_putchar_fd('\n', 1);
 	sa.sa_sigaction = handler;
-	sigemptyset(&sa.sa_mask); // signals to be blocked during execution of signal-catching function.
-	sa.sa_flags = SA_SIGINFO; // Special flags to affect behavior of signal. | 
+	sigemptyset(&sa.sa_mask);
+	sa.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
 	while (1)
