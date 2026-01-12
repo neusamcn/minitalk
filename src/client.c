@@ -6,7 +6,7 @@
 /*   By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 16:24:20 by ncruz-ne          #+#    #+#             */
-/*   Updated: 2026/01/12 12:47:43 by ncruz-ne         ###   ########.fr       */
+/*   Updated: 2026/01/12 13:13:54 by ncruz-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ static long	ft_atol(const char *nptr)
 	}
 	if ((nb > INT_MAX && sign == -1) || (nb > INT_MAX && sign == 1))
 	{
-		ft_putstr_fd("****ERROR****\nInvalid PID (over integer range)\n\n", 1);
-		ft_putstr_fd("Try sending message again.\n", 1);
+		ft_putstr_fd("\n****ERROR****\nInvalid PID (> integer range)\n\n", 1);
+		ft_putstr_fd("Try sending message again.\n\n", 1);
 		exit(EXIT_FAILURE);
 	}
 	return (nb * sign);
@@ -87,8 +87,8 @@ int	main(int ac, char **av)
 		server_pid = ft_atol(av[1]);
 		if (server_pid < 1 || kill(server_pid, 0) == -1)
 		{
-			ft_putstr_fd("****ERROR****\nInvalid server PID.\n\n", 1);
-			ft_putstr_fd("Try sending message again.\n", 1);
+			ft_putstr_fd("\n****ERROR****\nInvalid server PID.\n\n", 1);
+			ft_putstr_fd("Try sending message again.\n\n", 1);
 			return (EXIT_FAILURE);
 		}
 		init_sig_client();
@@ -98,8 +98,8 @@ int	main(int ac, char **av)
 		send_msg('\0', server_pid);
 		return (EXIT_SUCCESS);
 	}
-	ft_putstr_fd("****ERROR****\nIncorrect use of arguments\n\n", 1);
+	ft_putstr_fd("\n****ERROR****\nIncorrect use of arguments\n\n", 1);
 	ft_putstr_fd("How to use this program:\n", 1);
-	ft_putstr_fd("./client server_PID \"your_message\"\n", 1);
+	ft_putstr_fd("./client server_PID \"your_message\"\n\n", 1);
 	return (EXIT_FAILURE);
 }

@@ -6,7 +6,7 @@
 /*   By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 16:24:17 by ncruz-ne          #+#    #+#             */
-/*   Updated: 2026/01/12 12:47:39 by ncruz-ne         ###   ########.fr       */
+/*   Updated: 2026/01/12 13:13:18 by ncruz-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ int	main(void)
 {
 	struct sigaction	sa;
 
-	ft_putstr_fd("Use PID below w/ client to send message:\nServer PID: ", 1);
+	ft_putstr_fd("\nUse PID below w/ client to send message:\nServer PID: ", 1);
 	ft_putnbr_fd((int)getpid(), 1);
 	ft_putstr_fd("\n\nServer is listening...\n", 1);
-	ft_putstr_fd("Enter 'kill server_PID' from client to terminate.\n", 1);
+	ft_putstr_fd("Enter 'kill server_PID' from client to terminate.\n\n", 1);
 	init_sig_server();
 	sa.sa_sigaction = handler;
 	sigemptyset(&sa.sa_mask);
