@@ -27,7 +27,7 @@ We could also call this a custom inter-process communication (IPC) protocol on t
 		  valgrind --log-file=valg_client_log.log --leak-check=full --show-leak-kinds=all -s ./client server_PID "message"
 - To check the time it takes to display 100 characters (should be under 1 second):
 
-	  time ./client "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 abcdefghijklmnopqrstuvwxyz ABCDEFGHIJ"
+	  time ./client server_PID "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 abcdefghijklmnopqrstuvwxyz ABCDEFGHIJ"
 
 ## Resources
 
