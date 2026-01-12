@@ -1,0 +1,22 @@
+/******************************************************************************/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ncruz-ne <ncruz-ne@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/11 14:57:52 by ncruz-ne          #+#    #+#             */
+/*   Updated: 2026/01/12 01:09:35 by ncruz-ne         ###   ########.fr       */
+/*                                                                            */
+/******************************************************************************/
+
+#ifndef MINITALK_H
+# define MINITALK_H
+
+# include "../libft/libft.h"
+# include <signal.h>
+
+// long	ft_atol(const char *nptr);
+// char	*ft_realloc(char *str, int to_add);
+
+#endif
