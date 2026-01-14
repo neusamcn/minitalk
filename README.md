@@ -28,7 +28,7 @@ We could also call this a custom inter-process communication (IPC) protocol on t
 
 - To check the time it takes to display 100 characters (should be under 1 second):
 
-	  time ./client server_PID "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 abcdefghijklmnopqrstuvwxyz 0123456789"
+	  time ./client server_PID "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 abcdefghijklmnopqrstuvwxyz 9876543210"
 
 ## Resources
 
