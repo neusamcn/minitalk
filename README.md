@@ -10,7 +10,7 @@ We could also call this a custom inter-process communication (IPC) protocol on t
 ## Instructions
 
 1. Compile the project with `make` or `make all`.
-2. Open 2 terminal windows at the root of the project folder.
+2. Open 2 or more terminal windows at the root of the project folder.
 3. From one window we'll start the server program: `./server`
 4. In other windows we start the client program, adding the PID that was provided by `./server` and a message, as following: `./client server_PID "message"`
 5. Confirm messages are received from different terminals.
